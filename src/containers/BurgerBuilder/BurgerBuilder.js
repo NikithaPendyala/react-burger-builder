@@ -1,11 +1,15 @@
-import React, {Fragment} from 'react';
-import Burger from '../../components/Burger/Burger'
+import React, {Fragment, useState} from 'react';
+import Burger from '../../components/Burger/Burger';
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
-const burgerBuilder = () => (
-    <Fragment>
-        <Burger></Burger>
-        <div>Burger controls</div>
-    </Fragment>
-);
+const BurgerBuilder = () => {
+    let [Ingredients, setIngredients] = useState({ meat:0,cheese:0,salad:0,bacon:0});
+    return (
+        <Fragment>
+            <Burger ingredients={Ingredients}></Burger>
+            <BuildControls></BuildControls>
+        </Fragment>
+    )
+};
 
-export default burgerBuilder;
+export default BurgerBuilder;
